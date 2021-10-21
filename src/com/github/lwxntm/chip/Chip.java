@@ -1,6 +1,6 @@
 package com.github.lwxntm.chip;
 
-public class chip {
+public class Chip {
 
     //chip-8有4KB的内存，这里使用char数组来储存
     private char[] memory;
@@ -41,6 +41,12 @@ public class chip {
         keys=new byte[16];
 
         display=new byte[64*32];
+
+        //for test
+        for (int i = 0; i < 64 * 32; i++) {
+            if (i%5==0)
+                display[i]=1;
+        }
     }
 
     public void run(){
@@ -61,5 +67,9 @@ public class chip {
                 System.err.println("不支持的OpCode");
                 System.exit(1);
         }
+    }
+
+    public  byte[] getDisplay(){
+        return  display;
     }
 }

@@ -1,12 +1,14 @@
 package com.github.lwxntm.emu;
 
-import com.github.lwxntm.chip.chip;
+import com.github.lwxntm.chip.Chip;
 
 public class Main {
 
     public static void main(String[] args) {
-        chip c=new chip();
+        Chip c=new Chip();
         c.init();
-        c.run();
+     //   c.run();
+        ChipFrame f=new ChipFrame(c);
+
     }
 }
